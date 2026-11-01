@@ -1,0 +1,10 @@
+.idea/
+.env
+logs/
+__pycache__/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.db
+*.db-shm
+*.db-wal

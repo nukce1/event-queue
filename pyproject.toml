@@ -1,0 +1,48 @@
+[tool.poetry]
+name="EventQueue"
+version="1.0"
+description="Webhook event receiver with a table-based processing queue (test task)"
+authors=[]
+
+[tool.poetry.dependencies]
+python="^3.11"
+flask = "^3.0"
+pydantic = "^2.11"
+pydantic-settings = "^2.9"
+sqlalchemy = "^2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+black = "^24.8.0"
+isort = "^5.13.2"
+ruff = "^0.6.8"
+pre-commit = "^3.8.0"
+
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "SIM",
+    "W",
+]
+
+[tool.isort]
+line_length = 120
+py_version=311
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 2
+use_parentheses = true
+
+[tool.pytest.ini_options]
+pythonpath = ["app"]
+testpaths = ["tests"]
